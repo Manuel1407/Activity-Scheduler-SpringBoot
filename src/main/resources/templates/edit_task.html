@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/navbar}" >
+<head>
+    <meta charset="UTF-8">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet"/>
+    <title>Task_edit</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+
+    <div class = "container">
+        <div class = "row">
+            <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                <h1 class = "text-center"> Edit Task </h1>
+                <div class = "card-body">
+                    <form th:action="@{/edit/{id} (id=${singleTask.id})}" th:object = "${taskBody}" method="POST">
+                        <div class ="form-group">
+                            <label> Title </label>
+                            <input type = "text" name = "title" th:field = "*{title}" class = "form-control" placeholder="Enter Title"/>
+                        </div>
+                        <div class ="form-group">
+                            <label> Description </label>
+                            <input type = "text" name = "description" th:field = "*{description}" class = "form-control" placeholder="Enter Description"/>
+                        </div>
+                        <div class = "box-footer">
+                            <button type="submit" class = "btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
