@@ -105,7 +105,7 @@ public class UserServiceImpl implements UserService {
     public String moveForward(long id) {
         Task task = taskRepository.findById(id).get();
         String status = task.getStatus().toString();
-        if (status.equals("PENDING")) {
+        if (status.equals(Status.PENDING)) {
             task.setStatus(Status.IN_PROGRESS);
         } else if (status.equals("IN_PROGRESS")) {
             task.setStatus(Status.COMPLETED);
@@ -121,7 +121,7 @@ public class UserServiceImpl implements UserService {
     public String moveBackward(long id) {
         Task task = taskRepository.findById(id).get();
         Status status = task.getStatus();
-        if (status.equals("IN_PROGRESS")) {
+        if (status.equals(Status.IN_PROGRESS)) {
             task.setStatus(Status.PENDING);
         } else {
             return "Task is already pending";

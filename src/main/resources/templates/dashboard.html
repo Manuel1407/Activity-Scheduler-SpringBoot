@@ -25,13 +25,6 @@
                         <div class="card-header p-3" >
                             <h5 class="mb-0"><i class="fas fa-tasks"></i>Task List</h5>
                             <span class="d-flex justify-content-end ">
-
-                                <div>
-                                    <a th:href="@{/task/{status}(status =${'PENDING'})}" class="btn btn-danger btn-sm mb-3">Pending Tasks</a>
-                                    <a th:href="@{/task/{status}(status=${'IN_PROGRESS'})}" class="btn btn-warning btn-sm mb-3">Tasks In Progress</a>
-                                    <a th:href="@{/task/{status}(status=${'COMPLETED'})}" class="btn btn-success btn-sm mb-3">Done Tasks</a>
-                                </div>
-
                                 <div class="dropdown show">
                                     <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Filter Status
@@ -67,7 +60,6 @@
                                     <td th:text="${task.updatedAt}" class="align-middle" >Updated At</td>
                                     <td th:text="${task.completedAt}" class="align-middle" >Completed At</td>
                                     <td>
-                                        <a href="#!" data-mdb-toggle="tooltip" title="Done"><i class="fas fa-check text-success me-2"></i></a>
                                         <a th:href="@{/arrow-left/{id}(id=${task.id})}" class="text-danger" data-mdb-toggle="tooltip" title="Backward"><i class="fa fa-arrow-left me-2"></i></a>
                                         <a th:href="@{/arrow-right/{id}(id=${task.id})}" class="text-danger" data-mdb-toggle="tooltip" title="Forward"><i class="fa fa-arrow-right me-2"></i></a>
                                         <a th:href="@{/viewPage/{id}(id=${task.id})}" class="text-info" data-mdb-toggle="tooltip" title="View"><i class="fas fa-eye me-2"></i></a>

@@ -60,7 +60,6 @@
                                     <td th:text="${task.updatedAt}" class="align-middle" >Updated At</td>
                                     <td th:text="${task.completedAt}" class="align-middle" >Completed At</td>
                                     <td>
-                                        <a href="#!" data-mdb-toggle="tooltip" title="Done"><i class="fas fa-check text-success me-2"></i></a>
                                         <a th:href="@{/backward}" class="text-danger" data-mdb-toggle="tooltip" title="Backward"><i class="fa fa-arrow-left me-2"></i></a>
                                         <a th:href="@{/forward}" class="text-danger" data-mdb-toggle="tooltip" title="Forward"><i class="fa fa-arrow-right me-2"></i></a>
                                         <a th:href="@{/viewPage/{id}(id=${task.id})}" class="text-info" data-mdb-toggle="tooltip" title="View"><i class="fas fa-eye me-2"></i></a>
