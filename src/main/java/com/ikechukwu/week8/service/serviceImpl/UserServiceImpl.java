@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
         if (user.getPassword().equals(password)) {
             message = "Success";
         } else {
-            message = "Incorrect Username or Password";
+            message = "Incorrect Password";
         }
         return message;
     }
@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService {
     public Task createTask(TaskDTO taskDTO, long id) {
         Task task = new Task();
         task.setTitle(taskDTO.getTitle());
-        User user = userRepository.findById(id).orElseThrow(()->new UserNotFoundException("Usernot found"));
+        User user = userRepository.findById(id).orElseThrow(()->new UserNotFoundException("User not found"));
         task.setUser(user);
         task.setDescription(taskDTO.getDescription());
         task.setStatus(Status.PENDING);

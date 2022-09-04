@@ -1,7 +1,9 @@
 package com.ikechukwu.week8.model;
 
 import com.ikechukwu.week8.enums.Status;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -10,6 +12,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name="Tasks")
 public class Task {
     @Id
